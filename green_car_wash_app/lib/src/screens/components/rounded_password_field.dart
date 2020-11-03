@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:green_car_wash_app/src/screens/components/text_field_container.dart';
-import 'package:green_car_wash_app/src/screens/recover_account/recover_acount.dart';
 
 class RoundedPasswordField extends StatelessWidget {
   final ValueChanged<String> onChanged;
   final bool pass;
+  final validator;
   const RoundedPasswordField({
     Key key,
     this.onChanged,
-    this.pass = true
+    this.pass = true,
+    this.validator
   }) : super(key: key);
 
   @override
@@ -17,7 +18,7 @@ class RoundedPasswordField extends StatelessWidget {
     return Column(
       children:<Widget>[ 
         TextFieldContainer(
-          child: TextField(
+          child:TextFormField(
             obscureText: true,
             onChanged: onChanged,
             decoration: InputDecoration(
@@ -27,7 +28,8 @@ class RoundedPasswordField extends StatelessWidget {
                 color: Color(0xff3482b7),
               ),
               border: InputBorder.none,  
-            )
+            ),
+            validator: validator,
           ),
           text: "Contraseña",
         ),
@@ -52,7 +54,7 @@ class RoundedPasswordField extends StatelessWidget {
             ),
           ),
           onTap: (){
-            Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (BuildContext context) => RecoverAccount()), (Route<dynamic> route) => false);
+            Navigator.pushReplacementNamed(context, "/recoveraccount");
           },
         ):    
         SizedBox(

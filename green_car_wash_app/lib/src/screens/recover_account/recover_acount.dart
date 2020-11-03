@@ -4,6 +4,7 @@ import 'package:green_car_wash_app/src/screens/components/rounded_button.dart';
 import 'package:green_car_wash_app/src/screens/components/rounded_input_field.dart';
 
 class RecoverAccount extends StatelessWidget{
+  static const String routeName = "/recoveraccount";
   @override
   Widget build(BuildContext context){
     Size size = MediaQuery.of(context).size;

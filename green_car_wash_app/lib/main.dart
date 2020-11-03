@@ -4,6 +4,7 @@ import 'package:green_car_wash_app/src/screens/home/home.dart';
 import 'package:green_car_wash_app/src/screens/login/login.dart';
 import 'package:green_car_wash_app/src/screens/my_orders/my_ordes.dart';
 import 'package:green_car_wash_app/src/screens/products/products.dart';
+import 'package:green_car_wash_app/src/screens/recover_account/recover_acount.dart';
 import 'package:green_car_wash_app/src/screens/register/register.dart';
 import 'package:green_car_wash_app/src/screens/services/services.dart';
 import 'package:green_car_wash_app/src/screens/splash_screen.dart';
@@ -20,6 +21,7 @@ void main() {
         Register.routeName: (BuildContext context)=>Register(),
         ConfirmRegister.routeName: (BuildContext context)=>ConfirmRegister(),
         Home.routeName: (BuildContext context)=>Home(),
+        RecoverAccount.routeName :(BuildContext conntet)=>RecoverAccount(),
       },
   ));
 }

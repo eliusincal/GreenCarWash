@@ -5,11 +5,13 @@ class RoundedInputField extends StatelessWidget {
   final String hintText;
   final ValueChanged<String> onChanged;
   final bool isNumber;
+  final validator;
   const RoundedInputField({
     Key key,
     this.hintText,
     this.onChanged,
-    this.isNumber = false
+    this.isNumber = false,
+    this.validator
   }) : super(key: key);
 
   @override
@@ -17,13 +19,14 @@ class RoundedInputField extends StatelessWidget {
     return Column(
       children:<Widget>[
         TextFieldContainer(
-          child: TextField(
+          child: TextFormField(
             keyboardType: isNumber ? TextInputType.number : TextInputType.text,
             onChanged: onChanged,
             decoration: InputDecoration(
               hintText: hintText,
               border: InputBorder.none, 
             ),
+            validator: validator,
           ),
           text: hintText,
         )
